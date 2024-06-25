@@ -17,6 +17,20 @@
  * Handles form validation and saving, all of the non-tag stuff
  */
 
+if (class_exists('\Textpattern\Tag\Registry')) {
+    Txp::get('\Textpattern\Tag\Registry')
+        ->register('mck_login')
+        ->register('mck_login_if')
+        ->register('mck_login_form')
+        ->register('mck_register_form')
+        ->register('mck_password_form')
+        ->register('mck_reset_form')
+        ->register('mck_login_bouncer')
+        ->register('mck_login_token')
+        ->register('mck_login_input')
+        ->register('mck_login_errors');
+}
+
 class mck_login
 {
     static public $form_errors = array();
